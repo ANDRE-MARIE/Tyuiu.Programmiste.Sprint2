@@ -7,20 +7,31 @@ namespace Tyuiu.Programmiste.Sprint2.Task4.V27.Lib
     {
         public double Calculate(double x, double y)
         {
+            double result;
+
             if (x * 10 > y + 2)
             {
-                if (Math.Abs(x - 1) < 0.0001) // Éviter division par zéro
-                    return 0;
+                // Condition : x * 10 > y + 2
+                // Formule : z = x * ((y + 2) / (x - 1))^x
 
-                return Math.Round(x * Math.Pow((y + 2) / (x - 1), x), 3);
+                // Vérification sécurité
+                if (x == 1) return 0;
+
+                double baseValue = (y + 2) / (x - 1);
+                result = x * Math.Pow(baseValue, x);
             }
             else
             {
-                if (Math.Abs(x) < 0.0001) // Éviter division par zéro
-                    return 0;
+                // Condition : x * 10 <= y + 2  
+                // Formule : z = y² - (2 / x)
 
-                return Math.Round(Math.Pow(y, 2) - (2 / x), 3);
+                // Vérification sécurité
+                if (x == 0) return 0;
+
+                result = (y * y) - (2 / x);
             }
+
+            return Math.Round(result, 3);
         }
     }
 }
