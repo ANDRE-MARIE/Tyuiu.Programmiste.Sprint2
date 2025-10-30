@@ -13,39 +13,19 @@ internal class Program
         Console.WriteLine("Sinon : z = y² - (2 / x)");
         Console.WriteLine("=============================================");
 
-        try
-        {
-            Console.Write("Entrez la valeur de x : ");
-            double x = Convert.ToDouble(Console.ReadLine());
+        
 
-            Console.Write("Entrez la valeur de y : ");
-            double y = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Entrez x: ");
+        double x = Convert.ToDouble(Console.ReadLine());
 
-            // Vérification des divisions par zéro
-            if (x == 1 && x * 10 > y + 2)
-            {
-                Console.WriteLine("Erreur : Division par zéro (x - 1 = 0)");
-            }
-            else if (x == 0 && x * 10 <= y + 2)
-            {
-                Console.WriteLine("Erreur : Division par zéro (x = 0)");
-            }
-            else
-            {
-                double result = ds.Calculate(x, y);
-                Console.WriteLine($"\nRésultat : z = {result}");
-            }
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("Erreur : Veuillez entrer des nombres valides.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Erreur : {ex.Message}");
-        }
+        Console.Write("Entrez y: ");
+        double y = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine("\nAppuyez sur une touche pour quitter...");
+        // APPEL DIRECT SANS MODIFICATION
+        double result = ds.Calculate(x, y);
+
+        Console.WriteLine($"Result: {result}");
         Console.ReadKey();
     }
 }
+
