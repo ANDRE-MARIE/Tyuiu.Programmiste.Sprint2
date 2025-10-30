@@ -12,19 +12,19 @@ namespace Tyuiu.Programmiste.Sprint2.Task5.V4.Lib
             switch (value)
             {
                 case 1:
-                    cardSuit = "piques";
+                    cardSuit = "spades";      // piques
                     break;
                 case 2:
-                    cardSuit = "trèfles";
+                    cardSuit = "clubs";       // trèfles
                     break;
                 case 3:
-                    cardSuit = "carreaux";
+                    cardSuit = "diamonds";    // carreaux
                     break;
                 case 4:
-                    cardSuit = "cœurs";
+                    cardSuit = "hearts";      // cœurs
                     break;
                 default:
-                    cardSuit = "couleur inconnue";
+                    cardSuit = "unknown suit";
                     break;
             }
 
@@ -32,4 +32,3 @@ namespace Tyuiu.Programmiste.Sprint2.Task5.V4.Lib
         }
     }
 }
-        
